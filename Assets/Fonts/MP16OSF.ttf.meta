@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: bf0c12c94453bb441ba4196266e9bb3a
+timeCreated: 1502401267
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Mister Pixel 16 pt - Old Style Figure
+  fontNames:
+  - Mister Pixel 16 pt - Old Style Figure
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

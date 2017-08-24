@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 83e53ab6ec9cd574a9d5ae48dbb76991
+timeCreated: 1502400652
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Twiggy
+  fontNames:
+  - Twiggy
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c1de61e39cb5d488fe0684e723aceb, type: 3}
+  m_Name: Wood Deck
+  m_EditorClassIdentifier: 
+  Tileset: {fileID: 11400000, guid: 5d0461ed828c145428a2a14f0498e52a, type: 2}
+  Params:
+    m_paramList: []
+  m_group: 1
+  m_autotilingMode: 5
+  m_showInPalette: 1
+  TileIds: ad030000ad030000ad03000024040000ad030000ad03000034030000ac030000ad03000026040000ad0300002504000036030000ae03000035030000ad030000
+  InteriorCornerTileIds: af030000b00300003703000038030000
