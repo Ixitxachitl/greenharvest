@@ -10,7 +10,7 @@ public class next_blink : MonoBehaviour {
     private string nextText;
 
 	// Use this for initialization
-	void Awake () {
+	void OnEnable () {
         text = GetComponent<Text>();
         delay = Time.realtimeSinceStartup;
 	}

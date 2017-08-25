@@ -1,13 +1,13 @@
 Mono path[0] = 'C:/Users/Noah/Documents/Green Harvest/test_Data/Managed'
 Mono config path = 'C:/Users/Noah/Documents/Green Harvest/test_Data/Mono/etc'
 PlayerConnection initialized from C:/Users/Noah/Documents/Green Harvest/test_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55181
-Broadcasting "[IP] 169.254.241.80 [Port] 55181 [Flags] 3 [Guid] 2106477721 [EditorId] 3838163001 [Version] 1048832 [Id] WindowsPlayer(jsl2jf934hd) [Debug] 1" to [169.254.255.255:54997]...
-Waiting for connection from host on [0.0.0.0:55181]...
-PlayerConnection accepted from [169.254.241.80] handle:0x364
-Started listening to [0.0.0.0:55181]
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,defer=y,address=0.0.0.0:56721
-PlayerConnection already initialized - listening to [0.0.0.0:55181]
+PlayerConnection initialized network socket : 0.0.0.0 55261
+Broadcasting "[IP] 169.254.241.80 [Port] 55261 [Flags] 3 [Guid] 4175894681 [EditorId] 3838163001 [Version] 1048832 [Id] WindowsPlayer(jsl2jf934hd) [Debug] 1" to [169.254.255.255:54997]...
+Waiting for connection from host on [0.0.0.0:55261]...
+PlayerConnection accepted from [169.254.241.80] handle:0x36c
+Started listening to [0.0.0.0:55261]
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,defer=y,address=0.0.0.0:56681
+PlayerConnection already initialized - listening to [0.0.0.0:55261]
 Player data archive not found at `C:/Users/Noah/Documents/Green Harvest/test_Data/data.unity3d`, using local filesystem
 Initialize engine version: 2017.1.0p4 (892c0f8d8f8a)
 GfxDevice: creating device client; threaded=1
@@ -34,136 +34,7 @@ Platform assembly: C:\Users\Noah\Documents\Green Harvest\test_Data\Managed\Unity
 Loading C:\Users\Noah\Documents\Green Harvest\test_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
 Platform assembly: C:\Users\Noah\Documents\Green Harvest\test_Data\Managed\System.dll (this message is harmless)
 Platform assembly: C:\Users\Noah\Documents\Green Harvest\test_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.088 seconds
+- Completed reload, in  0.020 seconds
 <RI> Initializing input.
 <RI> Input initialized.
-<RI> Initialized touch support.
-UnloadTime: 1.053538 ms
-set text: This is Page ONE!!!!!!
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-NPC_Dialogue:Update() (at C:\Users\Noah\Documents\Green Harvest\Assets\Scripts\NPC_Dialogue.cs:74)
- 
-(Filename: C:/Users/Noah/Documents/Green Harvest/Assets/Scripts/NPC_Dialogue.cs Line: 74)
-
-ran
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-NPC_Dialogue:Update() (at C:\Users\Noah\Documents\Green Harvest\Assets\Scripts\NPC_Dialogue.cs:76)
- 
-(Filename: C:/Users/Noah/Documents/Green Harvest/Assets/Scripts/NPC_Dialogue.cs Line: 76)
-
-set text: Page 2 Of 3. Hi I'm Orange Cat!
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-NPC_Dialogue:Update() (at C:\Users\Noah\Documents\Green Harvest\Assets\Scripts\NPC_Dialogue.cs:90)
- 
-(Filename: C:/Users/Noah/Documents/Green Harvest/Assets/Scripts/NPC_Dialogue.cs Line: 90)
-
-set text: Page 3 Of 3. Meow!
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-NPC_Dialogue:Update() (at C:\Users\Noah\Documents\Green Harvest\Assets\Scripts\NPC_Dialogue.cs:90)
- 
-(Filename: C:/Users/Noah/Documents/Green Harvest/Assets/Scripts/NPC_Dialogue.cs Line: 90)
-
-set text: This is Page ONE!!!!!!
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-NPC_Dialogue:Update() (at C:\Users\Noah\Documents\Green Harvest\Assets\Scripts\NPC_Dialogue.cs:74)
- 
-(Filename: C:/Users/Noah/Documents/Green Harvest/Assets/Scripts/NPC_Dialogue.cs Line: 74)
-
-ran
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-NPC_Dialogue:Update() (at C:\Users\Noah\Documents\Green Harvest\Assets\Scripts\NPC_Dialogue.cs:76)
- 
-(Filename: C:/Users/Noah/Documents/Green Harvest/Assets/Scripts/NPC_Dialogue.cs Line: 76)
-
-set text: Page 2 Of 3. Hi I'm Orange Cat!
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-NPC_Dialogue:Update() (at C:\Users\Noah\Documents\Green Harvest\Assets\Scripts\NPC_Dialogue.cs:90)
- 
-(Filename: C:/Users/Noah/Documents/Green Harvest/Assets/Scripts/NPC_Dialogue.cs Line: 90)
-
-set text: Page 3 Of 3. Meow!
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-NPC_Dialogue:Update() (at C:\Users\Noah\Documents\Green Harvest\Assets\Scripts\NPC_Dialogue.cs:90)
- 
-(Filename: C:/Users/Noah/Documents/Green Harvest/Assets/Scripts/NPC_Dialogue.cs Line: 90)
-
-ASYNC LOAD STARTED - DO NOT EXIT PLAY MODE UNTIL SCENE LOADS... UNITY WILL CRASH
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogWarning(Object)
-<load>c__Iterator0:MoveNext() (at C:\Users\Noah\Documents\Green Harvest\Assets\Scripts\door_control.cs:39)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
-UnityEngine.MonoBehaviour:StartCoroutine(String, Object)
-UnityEngine.MonoBehaviour:StartCoroutine(String) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\MonoBehaviourBindings.gen.cs:84)
-door_control:StartLoading() (at C:\Users\Noah\Documents\Green Harvest\Assets\Scripts\door_control.cs:34)
-door_control:OnTriggerEnter2D(Collider2D) (at C:\Users\Noah\Documents\Green Harvest\Assets\Scripts\door_control.cs:26)
- 
-(Filename: C:/Users/Noah/Documents/Green Harvest/Assets/Scripts/door_control.cs Line: 39)
-
-set text:  <interval=.08/>This Box man<interval=.1/>.... <interval=.08/>It's so nice<interval=.3/>...<interval=.08/>
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-NPC_Dialogue:Update() (at C:\Users\Noah\Documents\Green Harvest\Assets\Scripts\NPC_Dialogue.cs:74)
- 
-(Filename: C:/Users/Noah/Documents/Green Harvest/Assets/Scripts/NPC_Dialogue.cs Line: 74)
-
-ran
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-NPC_Dialogue:Update() (at C:\Users\Noah\Documents\Green Harvest\Assets\Scripts\NPC_Dialogue.cs:76)
- 
-(Filename: C:/Users/Noah/Documents/Green Harvest/Assets/Scripts/NPC_Dialogue.cs Line: 76)
-
-set text:  <interval=.08/>This Box man<interval=.1/>.... <interval=.08/>It's so nice<interval=.3/>...<interval=.08/>
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-NPC_Dialogue:Update() (at C:\Users\Noah\Documents\Green Harvest\Assets\Scripts\NPC_Dialogue.cs:74)
- 
-(Filename: C:/Users/Noah/Documents/Green Harvest/Assets/Scripts/NPC_Dialogue.cs Line: 74)
-
-ran
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-NPC_Dialogue:Update() (at C:\Users\Noah\Documents\Green Harvest\Assets\Scripts\NPC_Dialogue.cs:76)
- 
-(Filename: C:/Users/Noah/Documents/Green Harvest/Assets/Scripts/NPC_Dialogue.cs Line: 76)
-
-Setting up 4 worker threads for Enlighten.
-  Thread -> id: 3cc4 -> priority: 1 
-  Thread -> id: 4fcc -> priority: 1 
-  Thread -> id: 3aac -> priority: 1 
-  Thread -> id: 1454 -> priority: 1 
 Waiting for finish

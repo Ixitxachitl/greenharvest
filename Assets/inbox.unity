@@ -1320,6 +1320,17 @@ Prefab:
       value: ' <interval=.08/>This Box man<interval=.1/>.... <interval=.08/>It''s
         so nice<interval=.3/>...<interval=.08/>'
       objectReference: {fileID: 0}
+    - target: {fileID: 114625226686135556, guid: 07e55659f65671a409ad6891a09092c2,
+        type: 2}
+      propertyPath: spriteSheetName
+      value: cats3
+      objectReference: {fileID: 0}
+    - target: {fileID: 212892550530710626, guid: 07e55659f65671a409ad6891a09092c2,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300108, guid: b79d222f236c5d74fa3650316f9f5c52,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
   m_IsPrefabParent: 0
