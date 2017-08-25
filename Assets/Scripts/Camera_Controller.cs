@@ -102,11 +102,11 @@ public class Camera_Controller : MonoBehaviour
         }
         if (levelSizeY <= (2* yBorder))
         {
-            transform.position = new Vector2(transform.position.x, (levelSizeY / 2));
+            transform.position = new Vector2(transform.position.x, (levelSizeY / 2) + 1);
         }
         else if (player.transform.position.y < yBorder)
         {
-            transform.position = new Vector2(transform.position.x, yBorder+1);
+            transform.position = new Vector2(transform.position.x, yBorder + 1);
         }
         else if (player.transform.position.y > levelSizeY - yBorder)
         {
@@ -145,7 +145,7 @@ public class Camera_Controller : MonoBehaviour
         }
         if (levelSizeY <= 2*yBorder)
         {
-            targetPositionY = (levelSizeY / 2);
+            targetPositionY = (levelSizeY / 2) + 1;
         }
         else if (player.transform.position.y >= yBorder && player.transform.position.y <= levelSizeY - yBorder)
         {

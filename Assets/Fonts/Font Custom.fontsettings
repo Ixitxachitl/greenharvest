@@ -1554,20 +1554,20 @@ Font:
     advance: 12
     flipped: 0
   - serializedVersion: 2
-    index: 0
+    index: 166
     uv:
       serializedVersion: 2
       x: 0
-      y: 0
-      width: 0
-      height: 0
+      y: 0.5625
+      width: 0.0625
+      height: 0.0625
     vert:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 0
-      height: 0
-    advance: 0
+      width: 32
+      height: -32
+    advance: 4
     flipped: 0
   - serializedVersion: 2
     index: 0

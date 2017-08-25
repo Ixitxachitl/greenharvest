@@ -9,7 +9,6 @@ using UnityStandardAssets.CrossPlatformInput;
 public class NPC_Dialogue : MonoBehaviour {
     [SerializeField]
     private RetroPrinterScript text;
-    [Multiline]
     [TextArea(5, 3)]
     [SerializeField]
     private string[] dialogueText;
@@ -20,14 +19,20 @@ public class NPC_Dialogue : MonoBehaviour {
     [SerializeField]
     private GameObject canvas;
     private int dialoguePage;
+    [SerializeField]
+    private GameObject next;
 
     private float delayTime;
+    private float idleTime;
+    private Animator avatarState;
+    private bool cooldown;
 
     // Use this for initialization
     void Start()
     {
         dialogueOpen = false;
-        canvas.GetComponentInChildren<Canvas>().worldCamera = Camera.main;
+        canvas.GetComponentInChildren<Canvas>(true).worldCamera = Camera.main;
+        avatarState = GetComponentInChildren<Canvas>(true).GetComponentInChildren<Animator>(true);
         dialoguePage = 0;
     }
     // Update is called once per frame
@@ -36,6 +41,30 @@ public class NPC_Dialogue : MonoBehaviour {
         if (Time.realtimeSinceStartup > delayTime + .5f && delayed == false)
         {
             delayed = true;
+        }
+        if (Time.realtimeSinceStartup > idleTime + 1f && cooldown == true)
+        {
+            int triggerProb = Random.Range(1, 101);
+            if (triggerProb <= 10)
+            {
+                avatarState.SetTrigger("Blink");
+            }
+            else if (triggerProb > 10 && triggerProb <= 20)
+            {
+                avatarState.SetTrigger("Wiggle");
+            }
+            else if (triggerProb > 20 && triggerProb <= 25)
+            {
+                avatarState.SetTrigger("Tongue");
+            }
+
+            cooldown = false;
+        }
+        if (cooldown == false && !text.IsRunning){
+            cooldown = true;
+            idleTime = Time.realtimeSinceStartup;
+            avatarState.SetBool("Talking", false);
+            next.SetActive(true);
         }
 
         if (Physics2D.Raycast(transform.position, Vector2.down, 1, playerLayer) && CrossPlatformInputManager.GetButtonDown("Jump") && !dialogueOpen && Player_Controller.player_controller.lastMove.y == 1)
@@ -49,6 +78,8 @@ public class NPC_Dialogue : MonoBehaviour {
             dialogueOpen = true;
             delayed = false;
             delayTime = Time.realtimeSinceStartup;
+            avatarState.SetBool("Talking", true);
+            next.SetActive(false);
         }
         if (CrossPlatformInputManager.GetButtonDown("Jump") && dialogueOpen == true && delayed && !text.IsRunning)
         {
@@ -60,6 +91,8 @@ public class NPC_Dialogue : MonoBehaviour {
                 text.Run();
                 delayed = false;
                 delayTime = Time.realtimeSinceStartup;
+                avatarState.SetBool("Talking", true);
+                next.SetActive(false);
             }
             else
             {
@@ -67,8 +100,10 @@ public class NPC_Dialogue : MonoBehaviour {
                 dialogueOpen = false;
                 text.GetComponent<Text>().text = "";
                 text.Stop();
+                avatarState.SetBool("Talking", false);
                 canvas.SetActive(false);
                 Player_Controller.player_controller.disableControls = false;
+                next.SetActive(false);
             }
         }
     }
