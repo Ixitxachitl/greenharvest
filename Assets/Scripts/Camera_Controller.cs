@@ -124,7 +124,7 @@ public class Camera_Controller : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
 
         if (levelSizeX <= 2*xBorder)

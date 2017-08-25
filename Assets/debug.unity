@@ -1357,12 +1357,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1666069479}
-  dialogueText: "!\"#$%&'()*+,-./0123456789:;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\x7F"
+  dialogueText:
+  - '!"#$%&''()*+,-./0123456789:;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~'
+  - This is a second page of text thank meyou.
+  - Now I have a 3rd thing to say!
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
-  dialogueOpen: 0
-  delayed: 0
   canvas: {fileID: 1734949082}
 --- !u!1001 &577669942
 Prefab:
@@ -3531,7 +3532,7 @@ MonoBehaviour:
   textAsset: {fileID: 0}
   alternateCursor: 0
   runOnStart: 0
-  lineWrap: 1
+  lineWrap: 0
   charactersPerLine: 32
 --- !u!114 &1666069480
 MonoBehaviour:

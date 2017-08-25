@@ -4,15 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class NPC_Dialogue : MonoBehaviour {
 
-    public RetroPrinterScript text;
+
+public class NPC_Dialogue : MonoBehaviour {
+    [SerializeField]
+    private RetroPrinterScript text;
     [Multiline]
-    public string dialogueText;
-    public LayerMask playerLayer;
-    public bool dialogueOpen;
-    public bool delayed;
-    public GameObject canvas;
+    [TextArea(5, 3)]
+    [SerializeField]
+    private string[] dialogueText;
+    [SerializeField]
+    private LayerMask playerLayer;
+    private bool dialogueOpen;
+    private bool delayed;
+    [SerializeField]
+    private GameObject canvas;
+    private int dialoguePage;
 
     private float delayTime;
 
@@ -21,6 +28,7 @@ public class NPC_Dialogue : MonoBehaviour {
     {
         dialogueOpen = false;
         canvas.GetComponentInChildren<Canvas>().worldCamera = Camera.main;
+        dialoguePage = 0;
     }
     // Update is called once per frame
     void Update()
@@ -33,8 +41,8 @@ public class NPC_Dialogue : MonoBehaviour {
         if (Physics2D.Raycast(transform.position, Vector2.down, 1, playerLayer) && CrossPlatformInputManager.GetButtonDown("Jump") && !dialogueOpen && Player_Controller.player_controller.lastMove.y == 1)
         {
             canvas.SetActive(true);
-            text.SetText(dialogueText);
-            Debug.Log("set text: " + dialogueText);
+            text.SetText(dialogueText[dialoguePage]);
+            Debug.Log("set text: " + dialogueText[dialoguePage]);
             text.Run();
             Debug.Log("ran");
             Player_Controller.player_controller.disableControls = true;
@@ -44,11 +52,24 @@ public class NPC_Dialogue : MonoBehaviour {
         }
         if (CrossPlatformInputManager.GetButtonDown("Jump") && dialogueOpen == true && delayed && !text.IsRunning)
         {
-            dialogueOpen = false;
-            text.GetComponent<Text>().text = "";
-            text.Stop();
-            canvas.SetActive(false);
-            Player_Controller.player_controller.disableControls = false;
+            if (dialoguePage < dialogueText.Length - 1)
+            {
+                dialoguePage++;
+                text.SetText(dialogueText[dialoguePage]);
+                Debug.Log("set text: " + dialogueText[dialoguePage]);
+                text.Run();
+                delayed = false;
+                delayTime = Time.realtimeSinceStartup;
+            }
+            else
+            {
+                dialoguePage = 0;
+                dialogueOpen = false;
+                text.GetComponent<Text>().text = "";
+                text.Stop();
+                canvas.SetActive(false);
+                Player_Controller.player_controller.disableControls = false;
+            }
         }
     }
 }
