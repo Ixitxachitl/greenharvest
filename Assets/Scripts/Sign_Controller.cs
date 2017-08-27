@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
+using CnControls;
 
 public class Sign_Controller : MonoBehaviour
 {
@@ -32,7 +32,7 @@ public class Sign_Controller : MonoBehaviour
             delayed = true;
         }
 
-        if (Physics2D.Raycast(transform.position, Vector2.down, 1, playerLayer) && CrossPlatformInputManager.GetButtonDown("Jump") && !signOpen && Player_Controller.player_controller.lastMove.y == 1)
+        if (Physics2D.Raycast(transform.position, Vector2.down, 1, playerLayer) && CnInputManager.GetButtonDown("Jump") && !signOpen && Player_Controller.player_controller.lastMove.y == 1)
         {
             canvas.SetActive(true);
             Player_Controller.player_controller.disableControls = true;
@@ -40,7 +40,7 @@ public class Sign_Controller : MonoBehaviour
             delayed = false;
             delayTime = Time.realtimeSinceStartup;
         }
-        if (CrossPlatformInputManager.GetButtonDown("Jump") && signOpen == true && delayed)
+        if (CnInputManager.GetButtonDown("Jump") && signOpen == true && delayed)
         {
             signOpen = false;
             canvas.SetActive(false);

@@ -35,6 +35,13 @@ public class Camera_Controller : MonoBehaviour
     public float xBorder;
     public float yBorder;
 
+    [SerializeField]
+    private GameObject mobileControls;
+    [SerializeField]
+    private bool enableMobile;
+    [SerializeField]
+    private GameObject eventSystem;
+
     public void Fade(bool showing, float duration)
     {
         isShowing = showing;
@@ -45,8 +52,13 @@ public class Camera_Controller : MonoBehaviour
 
     private void Awake()
     {
+        if (eventSystem.activeSelf)
+        {
+            eventSystem.SetActive(false);
+        }
         if (camera_controller == null)
         {
+            eventSystem.SetActive(true);
             camera_controller = this;
             DontDestroyOnLoad(gameObject);
         }
@@ -57,12 +69,19 @@ public class Camera_Controller : MonoBehaviour
     {
         SceneManager.sceneUnloaded += OnSceneUnloaded;
         SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.activeSceneChanged += OnSceneChange;
     }
 
     void OnDisable()
     {
         SceneManager.sceneUnloaded -= OnSceneUnloaded;
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.activeSceneChanged -= OnSceneChange;
+    }
+
+    public void OnSceneChange(Scene scene1, Scene scene2)
+    {
+        Fade(false, 1f);
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -72,8 +91,7 @@ public class Camera_Controller : MonoBehaviour
 
     public void OnSceneUnloaded(Scene scene1)
     {
-        Fade(false, 1f);
-
+        player = Player_Controller.player_controller.transform;
         levelSizeX = 0;
         levelSizeY = 0;
         CreativeSpore.SuperTilemapEditor.Tilemap[] objs = FindObjectsOfType(typeof(CreativeSpore.SuperTilemapEditor.Tilemap)) as CreativeSpore.SuperTilemapEditor.Tilemap[];
@@ -119,8 +137,29 @@ public class Camera_Controller : MonoBehaviour
     {
         realTimeSinceLastFrame = 0;
         realTimeAtLastFrame = Time.realtimeSinceStartup;
-        player = Player_Controller.player_controller.transform;
         OnSceneUnloaded(SceneManager.GetActiveScene());
+
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            mobileControls.SetActive(true);
+            enableMobile = true;
+        }
+        else
+        {
+            mobileControls.SetActive(false);
+            enableMobile = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (enableMobile == true && !mobileControls.activeSelf)
+        {
+            mobileControls.SetActive(true);
+        } else if (enableMobile == false && mobileControls.activeSelf)
+        {
+            mobileControls.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -169,7 +208,7 @@ public class Camera_Controller : MonoBehaviour
 
         if (!isInTransition) return;
 
-        transition += (isShowing) ? Time.deltaTime * (1 / duration) : -Time.deltaTime * (1 / duration);
+        transition += (isShowing) ? realTimeSinceLastFrame * (1 / duration) : -realTimeSinceLastFrame * (1 / duration);
         fadeImage.color = Color.Lerp(new Color(0, 0, 0, 0), Color.black, transition);
 
         if (transition > 1 || transition < 0) isInTransition = false;

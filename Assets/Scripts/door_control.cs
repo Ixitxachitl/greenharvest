@@ -25,8 +25,6 @@ public class door_control : MonoBehaviour {
             Player_Controller.player_controller.targetLoadY = targetLocationY;
             StartLoading();
         }
-        //SceneManager.LoadScene(level);
-
         
     }
     public void StartLoading()
@@ -40,10 +38,12 @@ public class door_control : MonoBehaviour {
            "DO NOT EXIT PLAY MODE UNTIL SCENE LOADS... UNITY WILL CRASH");
         string currentScene = SceneManager.GetActiveScene().name;
         asyncOperation = SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
+        Player_Controller.player_controller.disableControls = true;
         asyncOperation.allowSceneActivation = true;
         yield return asyncOperation;
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(level));
         SceneManager.UnloadSceneAsync(currentScene);
-
+        Player_Controller.player_controller.disableControls = false;
     }
 
 }

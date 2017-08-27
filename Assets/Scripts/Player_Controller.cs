@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
+using CnControls;
 
 
 public class Player_Controller : MonoBehaviour
@@ -140,23 +140,23 @@ public class Player_Controller : MonoBehaviour
             PC.enabled = true;
         }
 
-        if (CrossPlatformInputManager.GetButtonDown("Fire3") && moving == true && movementSpeed == runSpeed && !disableControls)
+        if (CnInputManager.GetButtonDown("Fire3") && moving == true && movementSpeed == runSpeed && !disableControls)
         {
             runSpeed += 4;
             running = true;
         }
-        else if (CrossPlatformInputManager.GetButtonUp("Fire3") && running == true && !disableControls)
+        else if (CnInputManager.GetButtonUp("Fire3") && running == true && !disableControls)
         {
             running = false;
             runSpeed -= 4;
         }
-        if (running == false && CrossPlatformInputManager.GetButton("Fire3") && movementSpeed == runSpeed && !disableControls)
+        if (running == false && CnInputManager.GetButton("Fire3") && movementSpeed == runSpeed && !disableControls)
         {
             runSpeed += 4;
             running = true;
         }
 
-        if ((!Input.anyKey || (CrossPlatformInputManager.GetAxisRaw("Horizontal") == 0 && CrossPlatformInputManager.GetAxisRaw("Vertical") == 0)) && !disableControls)
+        if ((!Input.anyKey || (CnInputManager.GetAxisRaw("Horizontal") > -.2f && CnInputManager.GetAxisRaw("Horizontal") < .2f && CnInputManager.GetAxisRaw("Vertical") > -.2f && CnInputManager.GetAxisRaw("Vertical") < .2f)) && !disableControls)
         {
             moving = false;
             rb2d.velocity = Vector2.zero;
@@ -169,7 +169,7 @@ public class Player_Controller : MonoBehaviour
         if (Input.GetButtonUp("Vertical"))
             rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
 
-        if ((CrossPlatformInputManager.GetAxis("Horizontal") > 0.7f || CrossPlatformInputManager.GetAxis("Horizontal") < -0.7f || CrossPlatformInputManager.GetAxis("Vertical") > 0.7f || CrossPlatformInputManager.GetAxis("Vertical") < -0.7f) && !disableControls)
+        if ((CnInputManager.GetAxis("Horizontal") > 0.7f || CnInputManager.GetAxis("Horizontal") < -0.7f || CnInputManager.GetAxis("Vertical") > 0.7f || CnInputManager.GetAxis("Vertical") < -0.7f) && !disableControls)
             movementSpeed = runSpeed;
         else
         {
@@ -182,7 +182,7 @@ public class Player_Controller : MonoBehaviour
         }
 
 
-        if (CrossPlatformInputManager.GetAxis("Horizontal") > 0f && CrossPlatformInputManager.GetAxis("Vertical") == 0 && !disableControls)
+        if (CnInputManager.GetAxis("Horizontal") > 0f && CnInputManager.GetAxis("Vertical") < .2f && CnInputManager.GetAxis("Vertical") > -.2f && !disableControls)
         {
             rb2d.velocity = new Vector2(1 * movementSpeed, 0);
             anim.SetFloat("MoveX", 1);
@@ -190,7 +190,7 @@ public class Player_Controller : MonoBehaviour
             moving = true;
             lastMove = new Vector2(1f, 0f);
         }
-        if (CrossPlatformInputManager.GetAxis("Horizontal") < 0f && CrossPlatformInputManager.GetAxis("Vertical") == 0 && !disableControls)
+        if (CnInputManager.GetAxis("Horizontal") < 0f && CnInputManager.GetAxis("Vertical") < .2f && CnInputManager.GetAxis("Vertical") > -.2f && !disableControls)
         {
             rb2d.velocity = new Vector2(-1 * movementSpeed, 0);
             anim.SetFloat("MoveX", -1);
@@ -198,7 +198,7 @@ public class Player_Controller : MonoBehaviour
             moving = true;
             lastMove = new Vector2(-1f, 0f);
         }
-        if (CrossPlatformInputManager.GetAxis("Vertical") > 0f && CrossPlatformInputManager.GetAxis("Horizontal") == 0 && !disableControls)
+        if (CnInputManager.GetAxis("Vertical") > 0f && CnInputManager.GetAxis("Horizontal") < .2f && CnInputManager.GetAxis("Horizontal") > -.2f && !disableControls)
         {
             rb2d.velocity = new Vector2(0, 1 * movementSpeed);
             anim.SetFloat("MoveY", 1);
@@ -206,7 +206,7 @@ public class Player_Controller : MonoBehaviour
             moving = true;
             lastMove = new Vector2(0f, 1f);
         }
-        if (CrossPlatformInputManager.GetAxis("Vertical") < 0f && CrossPlatformInputManager.GetAxis("Horizontal") == 0 && !disableControls)
+        if (CnInputManager.GetAxis("Vertical") < 0f && CnInputManager.GetAxis("Horizontal") < .2f && CnInputManager.GetAxis("Horizontal") > -.2f && !disableControls)
         {
             rb2d.velocity = new Vector2(0, -1 * movementSpeed);
             anim.SetFloat("MoveY", -1);
@@ -214,7 +214,7 @@ public class Player_Controller : MonoBehaviour
             moving = true;
             lastMove = new Vector2(0f, -1f);
         }
-        if (CrossPlatformInputManager.GetAxis("Horizontal") > 0f && CrossPlatformInputManager.GetAxis("Vertical") > 0f && !disableControls)
+        if (CnInputManager.GetAxis("Horizontal") > .2f && CnInputManager.GetAxis("Vertical") > .2f && !disableControls)
         {
             rb2d.velocity = new Vector2(1 * movementSpeed, 1 * movementSpeed);
             anim.SetFloat("MoveX", 1);
@@ -222,7 +222,7 @@ public class Player_Controller : MonoBehaviour
             moving = true;
             lastMove = new Vector2(1f, 1f);
         }
-        if (CrossPlatformInputManager.GetAxis("Horizontal") < 0 && CrossPlatformInputManager.GetAxis("Vertical") > 0f && !disableControls)
+        if (CnInputManager.GetAxis("Horizontal") < -.2f && CnInputManager.GetAxis("Vertical") > .2f && !disableControls)
         {
             rb2d.velocity = new Vector2(-1 * movementSpeed, 1 * movementSpeed);
             anim.SetFloat("MoveX", -1);
@@ -230,7 +230,7 @@ public class Player_Controller : MonoBehaviour
             moving = true;
             lastMove = new Vector2(-1f, 1f);
         }
-        if (CrossPlatformInputManager.GetAxis("Vertical") < 0f && CrossPlatformInputManager.GetAxis("Horizontal") < 0f && !disableControls)
+        if (CnInputManager.GetAxis("Vertical") < -.2f && CnInputManager.GetAxis("Horizontal") < -.2f && !disableControls)
         {
             rb2d.velocity = new Vector2(-1 * movementSpeed, -1 * movementSpeed);
             anim.SetFloat("MoveY", -1);
@@ -238,7 +238,7 @@ public class Player_Controller : MonoBehaviour
             moving = true;
             lastMove = new Vector2(-1f, -1f);
         }
-        if (CrossPlatformInputManager.GetAxis("Vertical") < 0f && CrossPlatformInputManager.GetAxis("Horizontal") > 0f && !disableControls)
+        if (CnInputManager.GetAxis("Vertical") < -.2f && CnInputManager.GetAxis("Horizontal") > .2f && !disableControls)
         {
             rb2d.velocity = new Vector2(1 * movementSpeed, -1 * movementSpeed);
             anim.SetFloat("MoveY", -1);
@@ -317,7 +317,7 @@ public class Player_Controller : MonoBehaviour
         }
 
 
-        if (CrossPlatformInputManager.GetButtonDown("Jump") && jumping == false && !disableControls && !Physics2D.Raycast(transform.position, lastMove, 2, interactable))
+        if (CnInputManager.GetButtonDown("Jump") && jumping == false && !disableControls && !Physics2D.Raycast(transform.position, lastMove, 2, interactable))
         {
             jumping = true;
             countdownJump = Time.time;

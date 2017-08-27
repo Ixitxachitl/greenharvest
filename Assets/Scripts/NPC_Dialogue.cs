@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityStandardAssets.CrossPlatformInput;
+using CnControls;
 
 
 
@@ -42,7 +42,7 @@ public class NPC_Dialogue : MonoBehaviour {
         {
             delayed = true;
         }
-        if (Time.realtimeSinceStartup > idleTime + 1f && cooldown == true)
+        if (Time.realtimeSinceStartup > idleTime + 1f && cooldown == true && avatarState.isActiveAndEnabled)
         {
             int triggerProb = Random.Range(1, 101);
             if (triggerProb <= 10)
@@ -60,14 +60,14 @@ public class NPC_Dialogue : MonoBehaviour {
 
             cooldown = false;
         }
-        if (cooldown == false && !text.IsRunning){
+        if (cooldown == false && !text.IsRunning && canvas.activeSelf){
             cooldown = true;
             idleTime = Time.realtimeSinceStartup;
             avatarState.SetBool("Talking", false);
             next.SetActive(true);
         }
 
-        if (Physics2D.Raycast(transform.position, Vector2.down, 1, playerLayer) && CrossPlatformInputManager.GetButtonDown("Jump") && !dialogueOpen && Player_Controller.player_controller.lastMove.y == 1)
+        if (Physics2D.Raycast(transform.position, Vector2.down, 1, playerLayer) && CnInputManager.GetButtonDown("Jump") && !dialogueOpen && Player_Controller.player_controller.lastMove.y == 1)
         {
             canvas.SetActive(true);
             text.SetText(dialogueText[dialoguePage]);
@@ -81,7 +81,7 @@ public class NPC_Dialogue : MonoBehaviour {
             avatarState.SetBool("Talking", true);
             next.SetActive(false);
         }
-        if (CrossPlatformInputManager.GetButtonDown("Jump") && dialogueOpen == true && delayed && !text.IsRunning)
+        if (CnInputManager.GetButtonDown("Jump") && dialogueOpen == true && delayed && !text.IsRunning)
         {
             if (dialoguePage < dialogueText.Length - 1)
             {
