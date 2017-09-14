@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using CreativeSpore;
 using UnityEngine.SceneManagement;
+using CnControls;
 
 public class Camera_Controller : MonoBehaviour
 {
@@ -41,6 +42,14 @@ public class Camera_Controller : MonoBehaviour
     private bool enableMobile;
     [SerializeField]
     private GameObject eventSystem;
+
+    public static bool paused;
+    public Text pauseText;
+
+    private bool exitSelected;
+    public Text _Exit;
+    public Text _Continue;
+    private float pauseDelta;
 
     public void Fade(bool showing, float duration)
     {
@@ -139,6 +148,8 @@ public class Camera_Controller : MonoBehaviour
         realTimeAtLastFrame = Time.realtimeSinceStartup;
         OnSceneUnloaded(SceneManager.GetActiveScene());
 
+        paused = false;
+
         if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
         {
             mobileControls.SetActive(true);
@@ -149,6 +160,7 @@ public class Camera_Controller : MonoBehaviour
             mobileControls.SetActive(false);
             enableMobile = false;
         }
+        exitSelected = false;
     }
 
     private void Update()
@@ -160,11 +172,68 @@ public class Camera_Controller : MonoBehaviour
         {
             mobileControls.SetActive(false);
         }
-    }
 
-    // Update is called once per frame
-    void LateUpdate()
-    {
+        if ((Input.GetButtonDown("Pause") || Input.GetKeyDown(KeyCode.Pause)) && Player_Controller.player_controller.disableControls == false && paused == false)
+        {
+            Time.timeScale = 0;
+            Player_Controller.player_controller.disableControls = true;
+            pauseText.enabled = true;
+            gameObject.GetComponentInChildren<GrayscaleFilter>().enabled = true;
+            paused = !paused;
+
+            _Exit.enabled = true;
+            _Continue.enabled = true;
+            exitSelected = false;
+            pauseDelta = 0;
+        }
+        else if ((CnInputManager.GetButtonDown("Pause") || Input.GetKeyDown(KeyCode.Pause) || ((CnInputManager.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Return)) && exitSelected == false)) && paused == true)
+        {
+            Time.timeScale = 1;
+            Player_Controller.player_controller.disableControls = false;
+            pauseText.enabled = false;
+            gameObject.GetComponentInChildren<GrayscaleFilter>().enabled = false;
+            paused = !paused;
+
+            _Exit.enabled = false;
+            _Exit.color = new Color(0, 0, 0, 1);
+            _Continue.enabled = false;
+            _Continue.color = new Color(0, 0, 0, 1);
+            exitSelected = false;
+        }
+
+
+
+        //Select Continue or Exit
+        if (paused)
+        {
+            pauseDelta += .1f * realTimeSinceLastFrame * 20;
+            if (CnInputManager.GetAxisRaw("Horizontal") > 0 && exitSelected == false)
+            {
+                exitSelected = true;
+                _Continue.color = new Color(0, 0, 0, 1);
+                pauseDelta = 0;
+            }
+            else if (CnInputManager.GetAxisRaw("Horizontal") < 0 && exitSelected == true)
+            {
+                exitSelected = false;
+                _Exit.color = new Color(0, 0, 0, 1);
+                pauseDelta = 0;
+            }
+            //If Exit is selected and the player presses jump or enter quits
+            if (exitSelected==true && (CnInputManager.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Return)))
+            {
+                Application.Quit();
+            }
+            if (exitSelected == false)
+            {
+                _Continue.color = new Color(1, 1, 1, 1 - Mathf.PingPong(pauseDelta, 1));
+            }
+            else if (exitSelected == true)
+            {
+                _Exit.color = new Color(1, 1, 1, 1 - Mathf.PingPong(pauseDelta, 1));
+            }
+        }
+
 
         if (levelSizeX <= 2*xBorder)
         {

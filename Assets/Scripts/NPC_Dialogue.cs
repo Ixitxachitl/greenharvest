@@ -67,7 +67,7 @@ public class NPC_Dialogue : MonoBehaviour {
             next.SetActive(true);
         }
 
-        if (Physics2D.Raycast(transform.position, Vector2.down, 1, playerLayer) && CnInputManager.GetButtonDown("Jump") && !dialogueOpen && Player_Controller.player_controller.lastMove.y == 1)
+        if (Physics2D.Raycast(transform.position, Vector2.down, 1, playerLayer) && CnInputManager.GetButtonDown("Jump") && !dialogueOpen && Player_Controller.player_controller.lastMove.y == 1 && Camera_Controller.paused == false)
         {
             canvas.SetActive(true);
             text.SetText(dialogueText[dialoguePage]);

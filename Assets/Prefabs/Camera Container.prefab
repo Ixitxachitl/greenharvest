@@ -254,7 +254,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 16.875
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -546,6 +546,9 @@ MonoBehaviour:
   mobileControls: {fileID: 1741030342919104}
   enableMobile: 0
   eventSystem: {fileID: 1669472407271196}
+  pauseText: {fileID: 0}
+  _Exit: {fileID: 0}
+  _Continue: {fileID: 0}
 --- !u!114 &114758731680111632
 MonoBehaviour:
   m_ObjectHideFlags: 1

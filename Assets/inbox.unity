@@ -1156,7 +1156,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 297f0eccb19f30245be0d0195b422cf8, type: 2}
+  - {fileID: 2100000, guid: a2caa2386a962634b807cc2181cf9857, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1192,7 +1192,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1665168083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.9, y: 9.15, z: 0}
+  m_LocalPosition: {x: 17, y: 9, z: 0}
   m_LocalScale: {x: 4.8062234, y: 4.8062234, z: 4.8062234}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1205,11 +1205,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114437820230652432, guid: 07e55659f65671a409ad6891a09092c2,
-        type: 2}
-      propertyPath: dialogueText.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4504763521652278, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
       propertyPath: m_LocalPosition.x
       value: 16.5
@@ -1247,38 +1242,6 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1066847886}
-    - target: {fileID: 114106223033971732, guid: 07e55659f65671a409ad6891a09092c2,
-        type: 2}
-      propertyPath: spriteSheetName
-      value: orangecatavatarstoned
-      objectReference: {fileID: 0}
-    - target: {fileID: 114437820230652432, guid: 07e55659f65671a409ad6891a09092c2,
-        type: 2}
-      propertyPath: dialogueText.Array.data[1]
-      value: Page 2 Of 3. Hi I'm Orange Cat!
-      objectReference: {fileID: 0}
-    - target: {fileID: 114437820230652432, guid: 07e55659f65671a409ad6891a09092c2,
-        type: 2}
-      propertyPath: dialogueText.Array.data[2]
-      value: Page 3 Of 3. Meow!
-      objectReference: {fileID: 0}
-    - target: {fileID: 114437820230652432, guid: 07e55659f65671a409ad6891a09092c2,
-        type: 2}
-      propertyPath: dialogueText.Array.data[0]
-      value: ' <interval=.08/>This Box man<interval=.1/>.... <interval=.08/>It''s
-        so nice<interval=.3/>...<interval=.08/>'
-      objectReference: {fileID: 0}
-    - target: {fileID: 114625226686135556, guid: 07e55659f65671a409ad6891a09092c2,
-        type: 2}
-      propertyPath: spriteSheetName
-      value: cats3
-      objectReference: {fileID: 0}
-    - target: {fileID: 212892550530710626, guid: 07e55659f65671a409ad6891a09092c2,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300108, guid: b79d222f236c5d74fa3650316f9f5c52,
-        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
   m_IsPrefabParent: 0

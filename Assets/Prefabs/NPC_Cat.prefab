@@ -193,7 +193,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1662923693823042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58, y: 50, z: 0}
+  m_LocalPosition: {x: 16.5, y: 22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4665099625050558}
@@ -355,7 +355,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "\xA7"
 --- !u!114 &114106223033971732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4026c71c3573a74ea08660c50c1e81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteSheetName: orangecatavatar
+  spriteSheetName: orangecatavatarstoned
 --- !u!114 &114158716950258580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -487,8 +487,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 16
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScaleFactor: 2
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -508,9 +508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 114956533772016656}
   dialogueText:
-  - This is Page ONE!!!!!!
-  - Page 2 Of 3. Hi I'm Orange Cat!
-  - Page 3 Of 3. Meow!
+  - ' <interval=.08/>This Box, man<interval=.1/>.... <interval=.08/>It''s so nice<interval=.3/>...<interval=.08/>'
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -527,7 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4026c71c3573a74ea08660c50c1e81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteSheetName: cats2
+  spriteSheetName: cats3
 --- !u!114 &114669983686871840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -604,7 +602,8 @@ MonoBehaviour:
   Sounds: []
   playSoundOnEmptyLines: 0
   MaxLines: 5
-  FullText: []
+  FullText:
+  - Page 3 Of 3. Meow!
   textAsset: {fileID: 0}
   alternateCursor: 0
   runOnStart: 0
@@ -725,8 +724,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2082481895
   m_SortingLayer: 3
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300404, guid: 0a86f3c5112c9ab49b90d7f5ef466f8f, type: 3}
+  m_SortingOrder: 5000
+  m_Sprite: {fileID: 21300108, guid: b79d222f236c5d74fa3650316f9f5c52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -765,14 +764,14 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: -504977851
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &224002961989484440
 RectTransform:
@@ -829,8 +828,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 209.9, y: -134.7}
-  m_SizeDelta: {x: 4, y: 0}
+  m_AnchoredPosition: {x: 218, y: -130}
+  m_SizeDelta: {x: 32, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224513496269166820
 RectTransform:

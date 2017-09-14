@@ -6,6 +6,7 @@ using CnControls;
 
 public class Player_Controller : MonoBehaviour
 {
+
     public static Player_Controller player_controller;
 
     public string lastLevel;
@@ -14,6 +15,7 @@ public class Player_Controller : MonoBehaviour
 
     public LayerMask nojumpLayer;
     public LayerMask interactable;
+    public LayerMask tallGrass;
     private LineRenderer line;
 
     private float movementSpeed;
@@ -46,6 +48,13 @@ public class Player_Controller : MonoBehaviour
     private float linedelay;
     private float linetime;
     public bool disableControls;
+
+    public int maxTallGrass = 5;
+    public GameObject tallGrassObject;
+    private List<GameObject> tallGrassObjects;
+    private bool tallGrassEnter;
+    private Vector3 tallGrassPosition;
+
 
     void DrawLine(Vector2 startingPoint, Vector2 endPoint, Color color, int delay)
     {
@@ -91,6 +100,27 @@ public class Player_Controller : MonoBehaviour
         nojump = false;
         PC = GetComponentInChildren<PolygonCollider2D>();
         disableControls = false;
+        tallGrassPosition = new Vector3();
+        tallGrassObjects = new List<GameObject>();
+        for (int i = 0; i < maxTallGrass; i++)
+        {
+            GameObject obj = (GameObject)Instantiate(tallGrassObject);
+            DontDestroyOnLoad(obj);
+            obj.SetActive(false);
+            tallGrassObjects.Add(obj);
+        }
+    }
+
+    void ActivateTallGrass()
+    {
+        for(int i = 0; i < tallGrassObjects.Count; i++)
+        {
+            if (!tallGrassObjects[i].activeInHierarchy)
+            {
+                tallGrassObjects[i].SetActive(true);
+                break;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -115,6 +145,25 @@ public class Player_Controller : MonoBehaviour
         //{ 
         //    HideLine();
         //}
+        RaycastHit2D onTallGrass = Physics2D.Raycast(transform.position, Vector2.zero,100,tallGrass);
+        if (onTallGrass)
+        {
+            if (!tallGrassEnter)
+            {
+                tallGrassEnter = true;
+                tallGrassPosition = transform.position;
+                ActivateTallGrass();
+            }
+            if (Vector2.Distance(tallGrassPosition, transform.position) > .5f)
+            {
+                ActivateTallGrass();
+                tallGrassPosition = transform.position;
+            }
+        }
+        if (!onTallGrass && tallGrassEnter)
+        {
+            tallGrassEnter = false;
+        }
 
         if (Physics2D.Raycast(transform.position,lastMove,4, nojumpLayer))
         {

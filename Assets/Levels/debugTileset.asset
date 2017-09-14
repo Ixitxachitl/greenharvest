@@ -16,7 +16,7 @@ MonoBehaviour:
   SliceOffset: {x: 1, y: 1}
   SlicePadding: {x: 1, y: 1}
   BackgroundColor: {r: 0, g: 0, b: 0, a: 0.8039216}
-  VisualTileSize: {x: 32, y: 32}
+  VisualTileSize: {x: 4, y: 4}
   VisualTilePadding: 1
   TileRowLength: 120
   m_tileViews:
@@ -8394,8 +8394,12 @@ MonoBehaviour:
       width: 0.007839294
       height: 0.02349486
     collData:
-      vertices: []
-      type: 0
+      vertices:
+      - {x: 0, y: 0}
+      - {x: 0, y: 1}
+      - {x: 1, y: 1}
+      - {x: 1, y: 0}
+      type: 1
     paramContainer:
       m_paramList: []
     prefabData:
@@ -19567,7 +19571,7 @@ MonoBehaviour:
       offsetMode: 0
       showTileWithPrefab: 0
       showPrefabPreviewInTilePalette: 0
-    autilingGroup: 1
+    autilingGroup: 0
   - uv:
       serializedVersion: 2
       x: 0.866732
@@ -19585,7 +19589,7 @@ MonoBehaviour:
       offsetMode: 0
       showTileWithPrefab: 0
       showPrefabPreviewInTilePalette: 0
-    autilingGroup: 1
+    autilingGroup: 0
   - uv:
       serializedVersion: 2
       x: 0.8750613
@@ -21775,7 +21779,7 @@ MonoBehaviour:
       offsetMode: 0
       showTileWithPrefab: 0
       showPrefabPreviewInTilePalette: 0
-    autilingGroup: 1
+    autilingGroup: 0
   - uv:
       serializedVersion: 2
       x: 0.866732
@@ -21793,7 +21797,7 @@ MonoBehaviour:
       offsetMode: 0
       showTileWithPrefab: 0
       showPrefabPreviewInTilePalette: 0
-    autilingGroup: 1
+    autilingGroup: 0
   - uv:
       serializedVersion: 2
       x: 0.8750613

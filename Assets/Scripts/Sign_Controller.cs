@@ -32,7 +32,7 @@ public class Sign_Controller : MonoBehaviour
             delayed = true;
         }
 
-        if (Physics2D.Raycast(transform.position, Vector2.down, 1, playerLayer) && CnInputManager.GetButtonDown("Jump") && !signOpen && Player_Controller.player_controller.lastMove.y == 1)
+        if (Physics2D.Raycast(transform.position, Vector2.down, 1, playerLayer) && CnInputManager.GetButtonDown("Jump") && !signOpen && Player_Controller.player_controller.lastMove.y == 1 && Camera_Controller.paused == false)
         {
             canvas.SetActive(true);
             Player_Controller.player_controller.disableControls = true;

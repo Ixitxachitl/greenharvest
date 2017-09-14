@@ -234,12 +234,18 @@ MonoBehaviour:
   interactable:
     serializedVersion: 2
     m_Bits: 512
+  tallGrass:
+    serializedVersion: 2
+    m_Bits: 2048
   keyInput: 1
   anim: {fileID: 95327065872491906}
   lastMove: {x: 0, y: 0}
   jumping: 0
   nojump: 0
   disableControls: 0
+  maxTallGrass: 5
+  tallGrassObject: {fileID: 1896149521522106, guid: 1b75538a3ff88004c82c039b6b32df08,
+    type: 2}
 --- !u!114 &114185470664640496
 MonoBehaviour:
   m_ObjectHideFlags: 1

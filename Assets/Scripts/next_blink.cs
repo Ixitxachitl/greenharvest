@@ -20,10 +20,10 @@ public class next_blink : MonoBehaviour {
 		if (Time.realtimeSinceStartup > delay + .5f)
         {
             text.text = nextText;
-            if (nextText == "¦")
+            if (nextText == "§")
                 nextText = " ";
             else
-                nextText = "¦";
+                nextText = "§";
             delay = Time.realtimeSinceStartup;
         }
         
