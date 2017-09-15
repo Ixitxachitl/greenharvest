@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 283604256}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 628597ed1f9bbc341aad49bb7dbcc6da, type: 3}
   m_Name: 
@@ -1504,6 +1504,26 @@ Prefab:
         type: 2}
       propertyPath: m_ReferencePixelsPerUnit
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114807152598075844, guid: 0750863e7b43eb047bdeb0f3435461f6,
+        type: 2}
+      propertyPath: retroSnap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114807152598075844, guid: 0750863e7b43eb047bdeb0f3435461f6,
+        type: 2}
+      propertyPath: pixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114807152598075844, guid: 0750863e7b43eb047bdeb0f3435461f6,
+        type: 2}
+      propertyPath: targetDimension
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114807152598075844, guid: 0750863e7b43eb047bdeb0f3435461f6,
+        type: 2}
+      propertyPath: targetCameraHalfWidth
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0750863e7b43eb047bdeb0f3435461f6, type: 2}
@@ -3552,6 +3572,11 @@ Prefab:
       value: 
       objectReference: {fileID: 21300108, guid: 2dee45375e3a79f40b69b8707ecd0907,
         type: 3}
+    - target: {fileID: 114106223033971732, guid: 07e55659f65671a409ad6891a09092c2,
+        type: 2}
+      propertyPath: spriteSheetName
+      value: blackcatavatar
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
   m_IsPrefabParent: 0
@@ -4616,6 +4641,11 @@ Prefab:
         type: 2}
       propertyPath: dialogueText.Array.data[0]
       value: One Page
+      objectReference: {fileID: 0}
+    - target: {fileID: 114106223033971732, guid: 07e55659f65671a409ad6891a09092c2,
+        type: 2}
+      propertyPath: spriteSheetName
+      value: orangecatavatar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
