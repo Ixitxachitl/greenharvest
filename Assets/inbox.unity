@@ -1205,6 +1205,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114437820230652432, guid: 07e55659f65671a409ad6891a09092c2,
+        type: 2}
+      propertyPath: dialogueText.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4504763521652278, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
       propertyPath: m_LocalPosition.x
       value: 16.5
@@ -1242,6 +1247,73 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1066847886}
+    - target: {fileID: 114437820230652432, guid: 07e55659f65671a409ad6891a09092c2,
+        type: 2}
+      propertyPath: dialogueText.Array.data[1]
+      value: Two Page
+      objectReference: {fileID: 0}
+    - target: {fileID: 114437820230652432, guid: 07e55659f65671a409ad6891a09092c2,
+        type: 2}
+      propertyPath: dialogueText.Array.data[2]
+      value: Three Page
+      objectReference: {fileID: 0}
+    - target: {fileID: 114437820230652432, guid: 07e55659f65671a409ad6891a09092c2,
+        type: 2}
+      propertyPath: dialogueText.Array.data[0]
+      value: This box man....
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136748077127308, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961136909180466, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764480482891654, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1832013965702102, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622439821855746, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506124719607026, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622174043024512, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662923693823042, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841580737960910, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114625226686135556, guid: 07e55659f65671a409ad6891a09092c2,
+        type: 2}
+      propertyPath: spriteSheetName
+      value: cats3
+      objectReference: {fileID: 0}
+    - target: {fileID: 212892550530710626, guid: 07e55659f65671a409ad6891a09092c2,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300108, guid: b79d222f236c5d74fa3650316f9f5c52,
+        type: 3}
+    - target: {fileID: 114106223033971732, guid: 07e55659f65671a409ad6891a09092c2,
+        type: 2}
+      propertyPath: spriteSheetName
+      value: orangecatavatarstoned
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
   m_IsPrefabParent: 0

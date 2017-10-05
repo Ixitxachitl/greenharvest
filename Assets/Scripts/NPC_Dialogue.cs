@@ -27,10 +27,13 @@ public class NPC_Dialogue : MonoBehaviour {
     private Animator avatarState;
     private bool cooldown;
 
+    private bool wasClosed;
+
     // Use this for initialization
     void Start()
     {
         dialogueOpen = false;
+        wasClosed = false;
         canvas.GetComponentInChildren<Canvas>(true).worldCamera = Camera.main;
         avatarState = GetComponentInChildren<Canvas>(true).GetComponentInChildren<Animator>(true);
         dialoguePage = 0;
@@ -38,6 +41,13 @@ public class NPC_Dialogue : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (wasClosed == true)
+        {
+            Player_Controller.player_controller.disableControls = false;
+            Player_Controller.player_controller.inDialogue = false;
+            Debug.Log("poke");
+            wasClosed = false;
+        }
         if (Time.realtimeSinceStartup > delayTime + .5f && delayed == false)
         {
             delayed = true;
@@ -67,7 +77,7 @@ public class NPC_Dialogue : MonoBehaviour {
             next.SetActive(true);
         }
 
-        if (Physics2D.Raycast(transform.position, Vector2.down, 1, playerLayer) && CnInputManager.GetButtonDown("Jump") && !dialogueOpen && Player_Controller.player_controller.lastMove.y == 1 && Camera_Controller.paused == false)
+        if (Physics2D.CircleCast(transform.position, 1, Vector2.zero, 10, playerLayer) && CnInputManager.GetButtonDown("Jump") && !dialogueOpen && Camera_Controller.paused == false && Player_Controller.player_controller.inDialogue == false)
         {
             canvas.SetActive(true);
             text.SetText(dialogueText[dialoguePage]);
@@ -75,11 +85,13 @@ public class NPC_Dialogue : MonoBehaviour {
             text.Run();
             Debug.Log("ran");
             Player_Controller.player_controller.disableControls = true;
+            Player_Controller.player_controller.inDialogue = true;
             dialogueOpen = true;
             delayed = false;
             delayTime = Time.realtimeSinceStartup;
             avatarState.SetBool("Talking", true);
             next.SetActive(false);
+    
         }
         if (CnInputManager.GetButtonDown("Jump") && dialogueOpen == true && delayed && !text.IsRunning)
         {
@@ -102,8 +114,8 @@ public class NPC_Dialogue : MonoBehaviour {
                 text.Stop();
                 avatarState.SetBool("Talking", false);
                 canvas.SetActive(false);
-                Player_Controller.player_controller.disableControls = false;
                 next.SetActive(false);
+                wasClosed = true;
             }
         }
     }

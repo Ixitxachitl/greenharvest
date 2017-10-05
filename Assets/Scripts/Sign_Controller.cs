@@ -32,10 +32,11 @@ public class Sign_Controller : MonoBehaviour
             delayed = true;
         }
 
-        if (Physics2D.Raycast(transform.position, Vector2.down, 1, playerLayer) && CnInputManager.GetButtonDown("Jump") && !signOpen && Player_Controller.player_controller.lastMove.y == 1 && Camera_Controller.paused == false)
+        if (Physics2D.Raycast(transform.position, Vector2.down, 1, playerLayer) && CnInputManager.GetButtonDown("Jump") && !signOpen && Player_Controller.player_controller.lastMove.y == 1 && Camera_Controller.paused == false && Player_Controller.player_controller.inDialogue == false)
         {
             canvas.SetActive(true);
             Player_Controller.player_controller.disableControls = true;
+            Player_Controller.player_controller.inDialogue = true;
             signOpen = true;
             delayed = false;
             delayTime = Time.realtimeSinceStartup;
@@ -45,6 +46,7 @@ public class Sign_Controller : MonoBehaviour
             signOpen = false;
             canvas.SetActive(false);
             Player_Controller.player_controller.disableControls = false;
+            Player_Controller.player_controller.inDialogue = false;
         }
 
         if (text.text != signText)

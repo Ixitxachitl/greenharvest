@@ -23,77 +23,19 @@ Platform assembly: C:\Users\Noah\Documents\Green Harvest\test_Data\Managed\Unity
 Loading C:\Users\Noah\Documents\Green Harvest\test_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
 Platform assembly: C:\Users\Noah\Documents\Green Harvest\test_Data\Managed\System.dll (this message is harmless)
 Platform assembly: C:\Users\Noah\Documents\Green Harvest\test_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.218 seconds
+- Completed reload, in  0.215 seconds
 <RI> Initializing input.
+<RI.Hid> Failed to create device file:
+ 2 The system cannot find the file specified.
+
+ 
+(Filename:  Line: 54)
+
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.409821 ms
-ASYNC LOAD STARTED - DO NOT EXIT PLAY MODE UNTIL SCENE LOADS... UNITY WILL CRASH
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Controls Disabled
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-cooling down
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-cooled down
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Controls Enabled
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-set text:  <interval=.08/>This Box, man<interval=.1/>.... <interval=.08/>It's so nice<interval=.3/>...<interval=.08/>
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ran
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ASYNC LOAD STARTED - DO NOT EXIT PLAY MODE UNTIL SCENE LOADS... UNITY WILL CRASH
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Controls Disabled
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-cooling down
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-cooled down
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Controls Enabled
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-set text: One Page
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ran
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-set text: Two Page
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-set text: Three Page
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
+UnloadTime: 1.250461 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 33d0 -> priority: 1 
-  Thread -> id: 3b90 -> priority: 1 
-  Thread -> id: 4938 -> priority: 1 
-  Thread -> id: 3a80 -> priority: 1 
+  Thread -> id: 50a4 -> priority: 1 
+  Thread -> id: 5bf8 -> priority: 1 
+  Thread -> id: 2d0c -> priority: 1 
+  Thread -> id: 53ac -> priority: 1 

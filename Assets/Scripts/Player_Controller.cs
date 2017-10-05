@@ -55,6 +55,8 @@ public class Player_Controller : MonoBehaviour
     private bool tallGrassEnter;
     private Vector3 tallGrassPosition;
 
+    public bool inDialogue;
+
 
     void DrawLine(Vector2 startingPoint, Vector2 endPoint, Color color, int delay)
     {
@@ -98,6 +100,7 @@ public class Player_Controller : MonoBehaviour
         anim.SetBool("Jumping", false);
         lastMove = new Vector2(0f, 0f);
         nojump = false;
+        inDialogue = false;
         PC = GetComponentInChildren<PolygonCollider2D>();
         disableControls = false;
         tallGrassPosition = new Vector3();
@@ -106,6 +109,8 @@ public class Player_Controller : MonoBehaviour
         {
             GameObject obj = (GameObject)Instantiate(tallGrassObject);
             DontDestroyOnLoad(obj);
+            obj.transform.SetParent(this.transform);
+            obj.name = "Tall Grass " + (i + 1);
             obj.SetActive(false);
             tallGrassObjects.Add(obj);
         }
@@ -118,6 +123,7 @@ public class Player_Controller : MonoBehaviour
             if (!tallGrassObjects[i].activeInHierarchy)
             {
                 tallGrassObjects[i].SetActive(true);
+                tallGrassObjects[i].transform.SetParent(null);
                 break;
             }
         }
@@ -165,12 +171,15 @@ public class Player_Controller : MonoBehaviour
             tallGrassEnter = false;
         }
 
-        if (Physics2D.Raycast(transform.position,lastMove,4, nojumpLayer))
+        foreach(GameObject obj in tallGrassObjects)
         {
-            nojump = true;
-            PC.enabled = true;
+            if(obj.activeInHierarchy == false)
+            {
+                obj.transform.SetParent(this.transform);
+            }
         }
-        if (Physics2D.Raycast(transform.position, lastMove, 4, nojumpLayer))
+
+        if (Physics2D.Raycast(transform.position,lastMove,4, nojumpLayer))
         {
             nojump = true;
             PC.enabled = true;

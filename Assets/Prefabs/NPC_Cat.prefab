@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114313310118945846}
   - component: {fileID: 95602037629767376}
   - component: {fileID: 114625226686135556}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: NPC Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 222946649015510502}
   - component: {fileID: 114091061893405914}
   - component: {fileID: 114669983686871840}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 114383169275926182}
   - component: {fileID: 114381952902233232}
   - component: {fileID: 114173039101909866}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,8 @@ GameObject:
   - component: {fileID: 4504763521652278}
   - component: {fileID: 50675865476158160}
   - component: {fileID: 114437820230652432}
-  m_Layer: 0
+  - component: {fileID: 114178135341787696}
+  m_Layer: 12
   m_Name: NPC_Cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +113,7 @@ GameObject:
   - component: {fileID: 224513496269166820}
   - component: {fileID: 222507638212204196}
   - component: {fileID: 114891719403615322}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +130,7 @@ GameObject:
   - component: {fileID: 4314894857283936}
   - component: {fileID: 212510588572802590}
   - component: {fileID: 114841129276419042}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: shadow
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -147,7 +148,7 @@ GameObject:
   - component: {fileID: 95656610147839672}
   - component: {fileID: 212823175816163090}
   - component: {fileID: 114106223033971732}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +167,7 @@ GameObject:
   - component: {fileID: 114956533772016656}
   - component: {fileID: 114158716950258580}
   - component: {fileID: 114313486002265776}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +194,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1662923693823042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.5, y: 22, z: 0}
+  m_LocalPosition: {x: 58, y: 50, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4665099625050558}
@@ -367,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4026c71c3573a74ea08660c50c1e81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteSheetName: orangecatavatarstoned
+  spriteSheetName: orangecatavatar
 --- !u!114 &114158716950258580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -390,6 +391,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e9ad6afa96eb549a86864f240d4e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114178135341787696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1662923693823042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615ca1adbe11b734587bb4c70e2d3f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 200
+  detectionRadius: 10
+  playerlayer:
+    serializedVersion: 2
+    m_Bits: 0
+  lastMove: {x: 0, y: 0}
+  MovementEnabled: 0
 --- !u!114 &114194828513695096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -487,7 +506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 16
-  m_ScaleFactor: 2
+  m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
@@ -508,7 +527,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 114956533772016656}
   dialogueText:
-  - ' <interval=.08/>This Box, man<interval=.1/>.... <interval=.08/>It''s so nice<interval=.3/>...<interval=.08/>'
+  - One Page
+  - Two Page
+  - Three Page
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -525,7 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4026c71c3573a74ea08660c50c1e81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteSheetName: cats3
+  spriteSheetName: cats2
 --- !u!114 &114669983686871840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -725,7 +746,7 @@ SpriteRenderer:
   m_SortingLayerID: -2082481895
   m_SortingLayer: 3
   m_SortingOrder: 5000
-  m_Sprite: {fileID: 21300108, guid: b79d222f236c5d74fa3650316f9f5c52, type: 3}
+  m_Sprite: {fileID: 21300404, guid: 0a86f3c5112c9ab49b90d7f5ef466f8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

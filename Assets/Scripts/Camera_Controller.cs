@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using CreativeSpore;
+using CreativeSpore.SuperTilemapEditor;
 using UnityEngine.SceneManagement;
 using CnControls;
 
@@ -24,7 +24,7 @@ public class Camera_Controller : MonoBehaviour
     private float realTimeSinceLastFrame;
     private float realTimeAtLastFrame;
 
-    private CreativeSpore.SuperTilemapEditor.Tilemap levelsize;
+    private STETilemap levelsize;
     private string lastScene;
 
     public Image fadeImage;
@@ -49,6 +49,8 @@ public class Camera_Controller : MonoBehaviour
     private bool exitSelected;
     public Text _Exit;
     public Text _Continue;
+    public Text _ExitShadow;
+    public Text _ContinueShadow;
     private float pauseDelta;
 
     public void Fade(bool showing, float duration)
@@ -103,8 +105,8 @@ public class Camera_Controller : MonoBehaviour
         player = Player_Controller.player_controller.transform;
         levelSizeX = 0;
         levelSizeY = 0;
-        CreativeSpore.SuperTilemapEditor.Tilemap[] objs = FindObjectsOfType(typeof(CreativeSpore.SuperTilemapEditor.Tilemap)) as CreativeSpore.SuperTilemapEditor.Tilemap[];
-        foreach (CreativeSpore.SuperTilemapEditor.Tilemap map in objs)
+        STETilemap[] objs = FindObjectsOfType(typeof(STETilemap)) as STETilemap[];
+        foreach (STETilemap map in objs)
         {
             if (map.MaxGridX > levelSizeX)
             {
@@ -173,16 +175,22 @@ public class Camera_Controller : MonoBehaviour
             mobileControls.SetActive(false);
         }
 
+        if (Screen.height != 540)
+            Screen.SetResolution(960, 540, true);
+        
         if ((Input.GetButtonDown("Pause") || Input.GetKeyDown(KeyCode.Pause)) && Player_Controller.player_controller.disableControls == false && paused == false)
         {
             Time.timeScale = 0;
             Player_Controller.player_controller.disableControls = true;
+            Player_Controller.player_controller.inDialogue = true;
             pauseText.enabled = true;
             gameObject.GetComponentInChildren<GrayscaleFilter>().enabled = true;
             paused = !paused;
 
             _Exit.enabled = true;
+            _ExitShadow.enabled = true;
             _Continue.enabled = true;
+            _ContinueShadow.enabled = true;
             exitSelected = false;
             pauseDelta = 0;
         }
@@ -190,14 +198,17 @@ public class Camera_Controller : MonoBehaviour
         {
             Time.timeScale = 1;
             Player_Controller.player_controller.disableControls = false;
+            Player_Controller.player_controller.inDialogue = false;
             pauseText.enabled = false;
             gameObject.GetComponentInChildren<GrayscaleFilter>().enabled = false;
             paused = !paused;
 
             _Exit.enabled = false;
-            _Exit.color = new Color(0, 0, 0, 1);
+            _ExitShadow.enabled = false;
+            _Exit.color = new Color(1, 0, 0, 1);
             _Continue.enabled = false;
-            _Continue.color = new Color(0, 0, 0, 1);
+            _ContinueShadow.enabled = false;
+            _Continue.color = new Color(0, 1, 0, 1);
             exitSelected = false;
         }
 
@@ -206,17 +217,17 @@ public class Camera_Controller : MonoBehaviour
         //Select Continue or Exit
         if (paused)
         {
-            pauseDelta += .1f * realTimeSinceLastFrame * 20;
+            pauseDelta += .1f * realTimeSinceLastFrame * 10;
             if (CnInputManager.GetAxisRaw("Horizontal") > 0 && exitSelected == false)
             {
                 exitSelected = true;
-                _Continue.color = new Color(0, 0, 0, 1);
+                _Continue.color = new Color(0, 1, 0, 1);
                 pauseDelta = 0;
             }
             else if (CnInputManager.GetAxisRaw("Horizontal") < 0 && exitSelected == true)
             {
                 exitSelected = false;
-                _Exit.color = new Color(0, 0, 0, 1);
+                _Exit.color = new Color(1, 0, 0, 1);
                 pauseDelta = 0;
             }
             //If Exit is selected and the player presses jump or enter quits
@@ -226,11 +237,11 @@ public class Camera_Controller : MonoBehaviour
             }
             if (exitSelected == false)
             {
-                _Continue.color = new Color(1, 1, 1, 1 - Mathf.PingPong(pauseDelta, 1));
+                _Continue.color = new Color(0, 1, 0, 1 - Mathf.PingPong(pauseDelta, .5f));
             }
             else if (exitSelected == true)
             {
-                _Exit.color = new Color(1, 1, 1, 1 - Mathf.PingPong(pauseDelta, 1));
+                _Exit.color = new Color(1, 0, 0, 1 - Mathf.PingPong(pauseDelta, .5f));
             }
         }
 

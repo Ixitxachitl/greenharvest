@@ -19,7 +19,7 @@ public class Perspective_tiles : MonoBehaviour
     void Update()
     {
         //if (player.position.y > transform.position.y)
-            GetComponent<CreativeSpore.SuperTilemapEditor.Tilemap>().OrderInLayer = 10000 - Mathf.RoundToInt(transform.position.y * 100);
+            GetComponent<CreativeSpore.SuperTilemapEditor.STETilemap>().OrderInLayer = 10000 - Mathf.RoundToInt(transform.position.y * 100);
         //else
            // GetComponent<CreativeSpore.SuperTilemapEditor.Tilemap>().OrderInLayer = 0;
     }
