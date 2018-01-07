@@ -4,8 +4,8 @@ Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
     Renderer: NVIDIA GeForce GTX 1050 Ti (ID=0x1c8c)
     Vendor:   NVIDIA
-    VRAM:     4016 MB
-    Driver:   22.21.13.8541
+    VRAM:     4031 MB
+    Driver:   23.21.13.8792
 Begin MonoManager ReloadAssembly
 Platform assembly: C:\Users\Noah\Documents\Green Harvest\test_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\Noah\Documents\Green Harvest\test_Data\Managed\UnityEngine.dll into Unity Child Domain
@@ -23,19 +23,85 @@ Platform assembly: C:\Users\Noah\Documents\Green Harvest\test_Data\Managed\Unity
 Loading C:\Users\Noah\Documents\Green Harvest\test_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
 Platform assembly: C:\Users\Noah\Documents\Green Harvest\test_Data\Managed\System.dll (this message is harmless)
 Platform assembly: C:\Users\Noah\Documents\Green Harvest\test_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.215 seconds
+- Completed reload, in  0.240 seconds
 <RI> Initializing input.
-<RI.Hid> Failed to create device file:
- 2 The system cannot find the file specified.
-
- 
-(Filename:  Line: 54)
-
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.250461 ms
+UnloadTime: 6.379581 ms
+ASYNC LOAD STARTED - DO NOT EXIT PLAY MODE UNTIL SCENE LOADS... UNITY WILL CRASH
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Controls Disabled
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+cooling down
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+cooled down
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Controls Enabled
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+set text: This box man....
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ran
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+poke
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ASYNC LOAD STARTED - DO NOT EXIT PLAY MODE UNTIL SCENE LOADS... UNITY WILL CRASH
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Controls Disabled
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+cooling down
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+cooled down
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Controls Enabled
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+set text: One Page
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ran
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+set text: Two Page
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+set text: Three Page
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+poke
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 50a4 -> priority: 1 
-  Thread -> id: 5bf8 -> priority: 1 
-  Thread -> id: 2d0c -> priority: 1 
-  Thread -> id: 53ac -> priority: 1 
+  Thread -> id: 1630 -> priority: 1 
+  Thread -> id: 16dc -> priority: 1 
+  Thread -> id: 9d4 -> priority: 1 
+  Thread -> id: c4c -> priority: 1 

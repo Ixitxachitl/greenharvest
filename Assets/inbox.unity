@@ -675,18 +675,23 @@ Prefab:
     - target: {fileID: 114221247997151742, guid: d4689e65ad07c31429ff5c0f5ce58fec,
         type: 2}
       propertyPath: level
-      value: debug
+      value: roundtown
       objectReference: {fileID: 0}
     - target: {fileID: 114221247997151742, guid: d4689e65ad07c31429ff5c0f5ce58fec,
         type: 2}
       propertyPath: targetLocationX
-      value: 69.5
+      value: 456
       objectReference: {fileID: 0}
     - target: {fileID: 114221247997151742, guid: d4689e65ad07c31429ff5c0f5ce58fec,
         type: 2}
       propertyPath: targetLocationY
-      value: 49
+      value: 282
       objectReference: {fileID: 0}
+    - target: {fileID: 114221247997151742, guid: d4689e65ad07c31429ff5c0f5ce58fec,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1900731368}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4689e65ad07c31429ff5c0f5ce58fec, type: 2}
   m_IsPrefabParent: 0
@@ -754,11 +759,12 @@ MonoBehaviour:
   m_maxGridY: 27
   m_parentTilemapGroup: {fileID: 300894639}
   m_parallaxFactor: {x: 1, y: 1}
-  m_castShadows: 0
-  m_receiveShadows: 0
-  m_useLightProbes: 0
-  m_reflextionProbesUsage: 0
-  m_anchorOverride: {fileID: 0}
+  m_chunkRendererProperties:
+    castShadows: 0
+    receiveShadows: 0
+    useLightProbes: 0
+    reflectionProbeUsage: 0
+    anchorOverride: {fileID: 0}
 --- !u!4 &1272019020
 Transform:
   m_ObjectHideFlags: 0
@@ -941,7 +947,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 1299e1c196acd364b821867183482ed3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1101,7 +1107,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 1299e1c196acd364b821867183482ed3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1314,6 +1320,21 @@ Prefab:
       propertyPath: spriteSheetName
       value: orangecatavatarstoned
       objectReference: {fileID: 0}
+    - target: {fileID: 50675865476158160, guid: 07e55659f65671a409ad6891a09092c2,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50675865476158160, guid: 07e55659f65671a409ad6891a09092c2,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114178135341787696, guid: 07e55659f65671a409ad6891a09092c2,
+        type: 2}
+      propertyPath: MovementEnabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07e55659f65671a409ad6891a09092c2, type: 2}
   m_IsPrefabParent: 0
@@ -1376,11 +1397,12 @@ MonoBehaviour:
   m_maxGridY: 32
   m_parentTilemapGroup: {fileID: 300894639}
   m_parallaxFactor: {x: 1, y: 1}
-  m_castShadows: 0
-  m_receiveShadows: 0
-  m_useLightProbes: 0
-  m_reflextionProbesUsage: 0
-  m_anchorOverride: {fileID: 0}
+  m_chunkRendererProperties:
+    castShadows: 0
+    receiveShadows: 0
+    useLightProbes: 0
+    reflectionProbeUsage: 0
+    anchorOverride: {fileID: 0}
 --- !u!4 &1743988320
 Transform:
   m_ObjectHideFlags: 0
@@ -1395,6 +1417,12 @@ Transform:
   m_Father: {fileID: 300894640}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1900731368 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114751991686139612, guid: 0750863e7b43eb047bdeb0f3435461f6,
+    type: 2}
+  m_PrefabInternal: {fileID: 172015850}
+  m_Script: {fileID: 11500000, guid: 58f9ba2f8f0e782408559b28976dd6b8, type: 3}
 --- !u!1 &2099903914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,11 +1482,12 @@ MonoBehaviour:
   m_maxGridY: 32
   m_parentTilemapGroup: {fileID: 300894639}
   m_parallaxFactor: {x: 1, y: 1}
-  m_castShadows: 0
-  m_receiveShadows: 0
-  m_useLightProbes: 0
-  m_reflextionProbesUsage: 0
-  m_anchorOverride: {fileID: 0}
+  m_chunkRendererProperties:
+    castShadows: 0
+    receiveShadows: 0
+    useLightProbes: 0
+    reflectionProbeUsage: 0
+    anchorOverride: {fileID: 0}
 --- !u!4 &2099903916
 Transform:
   m_ObjectHideFlags: 0

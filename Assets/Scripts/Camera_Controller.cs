@@ -28,7 +28,7 @@ public class Camera_Controller : MonoBehaviour
     private string lastScene;
 
     public Image fadeImage;
-    private bool isInTransition;
+    public bool isInTransition;
     private float transition;
     private bool isShowing;
     private float duration;
@@ -52,6 +52,7 @@ public class Camera_Controller : MonoBehaviour
     public Text _ExitShadow;
     public Text _ContinueShadow;
     private float pauseDelta;
+
 
     public void Fade(bool showing, float duration)
     {
@@ -92,7 +93,7 @@ public class Camera_Controller : MonoBehaviour
 
     public void OnSceneChange(Scene scene1, Scene scene2)
     {
-        Fade(false, 1f);
+        //Fade(false, 1f);
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -102,6 +103,7 @@ public class Camera_Controller : MonoBehaviour
 
     public void OnSceneUnloaded(Scene scene1)
     {
+        Fade(false, 1f);
         player = Player_Controller.player_controller.transform;
         levelSizeX = 0;
         levelSizeY = 0;
@@ -175,8 +177,8 @@ public class Camera_Controller : MonoBehaviour
             mobileControls.SetActive(false);
         }
 
-        if (Screen.height != 540)
-            Screen.SetResolution(960, 540, true);
+        if (Screen.height != 1920)
+            Screen.SetResolution(1920, 1080, true);
         
         if ((Input.GetButtonDown("Pause") || Input.GetKeyDown(KeyCode.Pause)) && Player_Controller.player_controller.disableControls == false && paused == false)
         {

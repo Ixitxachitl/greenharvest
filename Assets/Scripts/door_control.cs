@@ -9,11 +9,14 @@ public class door_control : MonoBehaviour {
     public string level;
     public float targetLocationX;
     public float targetLocationY;
-
     AsyncOperation asyncOperation;
 
     //private Vector2 targetLocation;
 
+    private void Update()
+    {
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,13 +39,17 @@ public class door_control : MonoBehaviour {
     {
         Debug.LogWarning("ASYNC LOAD STARTED - " +
            "DO NOT EXIT PLAY MODE UNTIL SCENE LOADS... UNITY WILL CRASH");
+        Player_Controller.player_controller.disableControls = true;
+        Camera_Controller.camera_controller.Fade(true, 1f);
+        yield return new WaitWhile(() => Camera_Controller.camera_controller.isInTransition);
         string currentScene = SceneManager.GetActiveScene().name;
         asyncOperation = SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
-        Player_Controller.player_controller.disableControls = true;
         asyncOperation.allowSceneActivation = true;
         yield return asyncOperation;
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(level));
         SceneManager.UnloadSceneAsync(currentScene);
+        Camera_Controller.camera_controller.Fade(false, 1f);
+        yield return new WaitWhile(() => Camera_Controller.camera_controller.isInTransition);
         Player_Controller.player_controller.disableControls = false;
     }
 

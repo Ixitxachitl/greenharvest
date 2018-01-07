@@ -80,3 +80,4 @@ MonoBehaviour:
   level: inbox
   targetLocationX: 16
   targetLocationY: 1
+  cam: {fileID: 114751991686139612, guid: 0750863e7b43eb047bdeb0f3435461f6, type: 2}

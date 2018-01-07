@@ -194,7 +194,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1662923693823042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58, y: 50, z: 0}
+  m_LocalPosition: {x: 481.5, y: 287, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4665099625050558}
@@ -237,18 +237,18 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1662923693823042}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1000
-  m_LinearDrag: 10
+  m_Mass: 100
+  m_LinearDrag: 100
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 148821d385554a045b8b3c062290a0a0, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!60 &60629927734957856
 PolygonCollider2D:
@@ -402,13 +402,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615ca1adbe11b734587bb4c70e2d3f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 200
+  movementSpeed: 6
   detectionRadius: 10
   playerlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   lastMove: {x: 0, y: 0}
-  MovementEnabled: 0
+  MovementEnabled: 1
 --- !u!114 &114194828513695096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -659,9 +659,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2082481895
-  m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingLayerID: -773014823
+  m_SortingLayer: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 1c0359c6cd6039c41bad7dac8ad2fe99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

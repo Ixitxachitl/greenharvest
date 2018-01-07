@@ -15,7 +15,7 @@ public class DeepGrassPrefab : MonoBehaviour
     void Start()
     {
         grassShowing = false;
-
+        hideGrass();
     }
 
     // Update is called once per frame

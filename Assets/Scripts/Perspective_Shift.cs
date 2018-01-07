@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+[ExecuteInEditMode]
 public class Perspective_Shift : MonoBehaviour {
 
     //private Transform player;
@@ -15,7 +15,8 @@ public class Perspective_Shift : MonoBehaviour {
         {
             body = this.transform;
         }
-	}
+        GetComponent<SpriteRenderer>().sortingOrder = 10000 - Mathf.RoundToInt(body.position.y * 100);
+    }
 	
 	// Update is called once per frame
 	void Update () {

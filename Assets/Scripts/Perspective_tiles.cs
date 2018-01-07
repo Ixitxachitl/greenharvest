@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using CreativeSpore;
-
+[ExecuteInEditMode]
 public class Perspective_tiles : MonoBehaviour
 {
 
@@ -13,6 +13,7 @@ public class Perspective_tiles : MonoBehaviour
     void Start()
     {
         //player = Player_Controller.player_controller.GetComponent<Transform>();
+        GetComponent<CreativeSpore.SuperTilemapEditor.STETilemap>().OrderInLayer = 10000 - Mathf.RoundToInt(transform.position.y * 100);
     }
 
     // Update is called once per frame

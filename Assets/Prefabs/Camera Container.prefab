@@ -856,6 +856,7 @@ MonoBehaviour:
   xoffset: 0
   yoffset: 0
   fadeImage: {fileID: 114820624706766696}
+  isInTransition: 1
   xBorder: 30
   yBorder: 17
   mobileControls: {fileID: 1741030342919104}
